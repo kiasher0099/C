@@ -1,3 +1,6 @@
+/*This is the main func where the code start from
+P.116 3.2.2*/
+
 #include <stdio.h>
 
 void multstore(long, long, long *);
