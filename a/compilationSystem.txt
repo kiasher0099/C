@@ -1,0 +1,19 @@
+ hello.c --> (cpp) --> hello.i --> (ccl) --> hello.s --> (as) --> hello.o printf.o --> (ld) --> hello (excutable)
+ [source]                                    
+ [.txt]                [.txt]                [.txt]               [.bin]                        [.bin]   
+
+* Preprocessing Stage: Preprocessor(cpp) modifies the source code based on the commands start with '#'.
+
+* Compiling  Stage: Compiler(ccl) translates the hello.i into hello.s, which includes an assembly language program:
+1.  main:
+2.    subq    $8, %rsp
+3.    movl    $.LC0, %edi
+4.    call    puts
+5.    movl    $0, %eax
+6.    addq    $8, %rsp
+7.    ret
+
+* Assemblying Stage: Assembler(as) translates hello.s into a machine language commands, then pack them all into 'relocatable object program'. Save them in hello.o.
+
+* Linking Stage: Hello calls printf func and linker(ld) combines printf.o & hello.o together, generates an excutable hello. 
+
