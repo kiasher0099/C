@@ -8,9 +8,11 @@ long exchange(long *xp, long y)
 	return x;
 }
 
+/*
 exchange:
   movq	(%rdi), %rax
   movq  %rsi, (%rdi)
   ret
+*/
 
 
