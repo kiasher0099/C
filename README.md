@@ -1,2 +1,2 @@
 # kroom
-daily practices of programming
+Daily practices of C programming
