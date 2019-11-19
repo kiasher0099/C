@@ -14,7 +14,7 @@
 #define MAX_COLS 20				/* 所能处理的最大列号 */
 #define MAX_INPUT 1000			/* 每个输入行的最大长度 */
 
-int read_column_numbers(int column[], int max);
+int read_column_numbers(int columns[], int max);
 void rearrange(char *output, char const *input, int n_columns, int const columns[]);
 
 int main(void)
@@ -96,7 +96,7 @@ void rearrange(char *output, char const *input, int n_columns, int const columns
 	*/
 
 	for(col = 0; col < n_columns; col += 2){
-		int nchard = columns[col + 1] - columns[col] + 1;
+		int nchars = columns[col + 1] - columns[col] + 1;
 		
 		/*
 		** 如果输入行结束或输出行数组已满，就结束任务。
@@ -116,30 +116,11 @@ void rearrange(char *output, char const *input, int n_columns, int const columns
 		** 复制相关的数据。
 		*/
 
-		strcpy(output + output_col, input + columns[col], nchars);
+		strncpy(output + output_col, input + columns[col], nchars);
 		output_col += nchars;
     }
 	output[output_col] = '\0';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
